@@ -2,7 +2,7 @@ from setuptools import setup
 
 setup(
     name='hydra-utils',
-    version='0.1.0.dev0',
+    version='0.1.0.dev1',
 
     description='Polihydra python utilities',
 
@@ -21,11 +21,12 @@ setup(
         'Programming Language :: Python :: 3',
         ],
 
-    py_modules=['gencoh'],
+    py_modules=['gencoh', 'npz2mat'],
 
-    install_requires=['numpy'],
+    install_requires=['numpy', 'scipy'],
 
     entry_points={
-        'console_scripts': ['gencoh = gencoh:main', ],
+        'console_scripts': ['gencoh = gencoh:main',
+                            'npz2mat = npz2mat:main', ],
         },
     )
