@@ -1,9 +1,10 @@
 # hydra
 
-HYDRogen embrittlement in Abaqus
+HYDRogen embrittlement in Abaqus FEA.
 
 
 ## Directory structure
 
-* `utils`: python utilities
+* `abapython`: _Abaqus_ python utilities
+* `utils`: _pure_ python utilities
 * `verification`: verification examples
