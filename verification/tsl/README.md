@@ -23,18 +23,19 @@ Analysis result files:
 Run instructions.
 
 1. Generate the `_coh.inp` material block using the `utils/gencoh.py` program
-```bash
-$ python ../../utils/gencoh.py 0.22e-3 9.7e-3 15e-3 1000 > _coh.inp
-```
+
+        $ python ../../utils/gencoh.py 0.22e-3 9.7e-3 15e-3 1000 > _coh.inp
+   
    The  generated file should be identical to `./results/_coh.inp`
+
 2. Run abaqus
-```bash
-$ abaqus analysis job=noH
-```
+
+        $ abaqus analysis job=noH
+
 3. Post-process results
-```bash
-$ abaqus python post.py noH
-```
+
+        $ abaqus python post.py noH
+
    Post-processing will generate the data file `noH.npz`, which is stored
    in numpy [`.npz` format](http://docs.scipy.org/doc/numpy/reference/generated/numpy.savez.html).
    A reference results file is given in the `results` directory.
@@ -66,23 +67,25 @@ Analysis result files:
 Run instructions.
 
 1. Generate the `_coh-ts.inp` material block using the `utils/gencoh.py` program
-```bash
-$ python ../../utils/gencoh.py 0.22e-3 9.7e-3 15e-3 1000 --true-stress > _coh-ts.inp
-```
+
+        $ python ../../utils/gencoh.py 0.22e-3 9.7e-3 15e-3 1000 --true-stress > _coh-ts.inp
+
    The  generated file should be identical to `./results/_coh.inp`
+
 2. Generate mesh `noH-ts.map` file
-```bash
-$ abaqus datacheck j=noH-ts
-$ abaqus python ../../abapython/mkmap.py noH-ts
-```
+
+        $ abaqus datacheck j=noH-ts
+        $ abaqus python ../../abapython/mkmap.py noH-ts
+
    The  generated file should be identical to `./results/noH-ts.map`
+
 3. Run abaqus
-```bash
-$ abaqus continue j=noH-ts user=ts.f
-```
+
+        $ abaqus continue j=noH-ts user=ts.f
+
 4. Post-process results
-```bash
-$ abaqus python post.py noH-ts
-```
+
+        $ abaqus python post.py noH-ts
+
    Post-processing will generate the data file `noH-ts.npz`.
    A reference results file is given in the `results` directory.
