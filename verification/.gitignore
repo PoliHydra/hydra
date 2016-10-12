@@ -6,3 +6,6 @@
 *.prt
 *.sim
 *.sta
+*.mdl
+*.023
+*.stt
