@@ -3,9 +3,12 @@
 *.dat
 *.msg
 *.odb
+*.fil
 *.prt
 *.sim
 *.sta
 *.mdl
 *.023
 *.stt
+*.log
+abaqus.rpy*
