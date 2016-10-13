@@ -33,8 +33,7 @@ def main():
     print 'step domain:', step.domain
     print 'step frames: %d' % (len(step.frames), )
 
-    t = np.fromiter((i.frameValue for i in odb.steps['TRACTION'].frames),
-                    dtype=np.float)
+    t = np.fromiter((i.frameValue for i in step.frames), dtype=np.float)
 
     res = {'t': t}
     for label, hreg, in DATA:
