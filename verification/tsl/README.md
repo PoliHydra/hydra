@@ -34,7 +34,7 @@ Run instructions.
 
 3. Post-process results
 
-        $ abaqus python post.py noH
+        $ abaqus python ../../abapython/saveh.py noH
 
    Post-processing will generate the data file `noH.npz`, which is stored
    in numpy [`.npz` format](http://docs.scipy.org/doc/numpy/reference/generated/numpy.savez.html).
@@ -85,7 +85,7 @@ Run instructions.
 
 4. Post-process results
 
-        $ abaqus python post.py noH-ts
+        $ abaqus python ../../abapython/saveh.py noH-ts
 
    Post-processing will generate the data file `noH-ts.npz`.
    A reference results file is given in the `results` directory.

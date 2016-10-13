@@ -30,9 +30,9 @@ COHES-W, 1, 1, 0.0
 COHES-S, 2, 2, 0.0
 ** ----------------------------------------------------------------
 **
-** STEP: TRACTION
+** STEP: Step-1
 **
-*STEP, NAME=TRACTION, INC=1000, NLGEOM
+*STEP, NAME=Step-1, INC=1000, NLGEOM
 displacement-controlled traction
 *STATIC
 0.005, 1, 1E-6, 0.005
