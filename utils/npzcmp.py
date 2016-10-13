@@ -1,4 +1,6 @@
+import sys
 import argparse
+import os.path
 import numpy as np
 import numpy.linalg
 
@@ -15,25 +17,40 @@ def main():
 
     args = parser.parse_args()
 
+    if os.path.isdir(args.refv):
+        refv = os.path.join(args.refv, os.path.basename(args.data))
+    else:
+        refv = args.refv
     try:
-        with np.load(args.data) as data, np.load(args.refv) as ref:
+        with np.load(args.data) as data, np.load(refv) as ref:
             dataset = set(data.files)
             refset = set(ref.files)
-            if set(data.files) != set(ref.files):
-                print('missing vars in {}:'.format(args.data))
-                for k in sorted(refset - dataset):
-                    print('   {}'.format(k))
-                print('extra vars in {}:'.format(args.data))
-                for k in sorted(dataset - refset):
-                    print('   {}'.format(k))
+            equalset = set()
             for key in sorted(refset & dataset):
                 a = data[key]
                 b = ref[key]
-                if a.shape == b.shape:
-                    err = norm(a-b)
+                if a.shape != b.shape:
+                    print('* {}: different shape.'.format(key))
+                    continue
+                if np.all(a == b):
+                    equalset.add(key)
                 else:
-                    err = 'different shape'
-                print('{}: {}'.format(key, err))
+                    print('* {}: |diff|_inf = {}'.format(key, norm(a-b)))
+            if refset - dataset:
+                print('* missing vars in {}:'.format(args.data))
+                for k in sorted(refset - dataset):
+                    print('   {}'.format(k))
+            if dataset - refset:
+                print('* extra vars in {}:'.format(args.data))
+                for k in sorted(dataset - refset):
+                    print('   {}'.format(k))
+            if equalset == dataset:
+                print("Files '{}' and '{}' are identical.".format(
+                    args.data, refv))
+                sys.exit(0)
+            else:
+                print('* other {} vars identical.'.format(len(equalset)))
+                sys.exit(1)
     except IOError as exp:
         print(exp)
 
