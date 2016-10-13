@@ -36,7 +36,7 @@ def main():
     t = np.fromiter((i.frameValue for i in odb.steps['TRACTION'].frames),
                     dtype=np.float)
 
-    res = {}
+    res = {'t': t}
     for label, hreg, in DATA:
         houts = step.historyRegions[hreg].historyOutputs
         for key in houts.keys():
