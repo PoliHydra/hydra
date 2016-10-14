@@ -34,9 +34,8 @@
 *NSET, NSET=LOAD
  23, 24
 **
-*NSET, NSET=Displ3
-3
-*NSET, NSET=Displ5
-5
 *Nset, nset=CONC
 23, 24, 21, 22, 19, 20
+** nset for HISTORY OUTPUT
+*NSET, NSET=NHIST
+3, 5, LOAD
