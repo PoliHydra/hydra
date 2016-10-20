@@ -5,6 +5,7 @@ HYDRogen embrittlement in Abaqus FEA.
 
 ## Directory structure
 
-* `abapython`: _Abaqus_ python utilities
-* `utils`: _pure_ python utilities
+* `abafortran`: Abaqus user subroutines
+* `abapython`: Abaqus python utilities
+* `utils`: pure python utilities
 * `verification`: verification examples
