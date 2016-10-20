@@ -2,7 +2,7 @@
 
 ## 3-step procedure
 
-Abaqus job files:
+### Abaqus job files:
 
 * H-1static.inp: preliminary static analysis job file
 * H-2massdiff.inp: mass diffusion analysis job file
@@ -16,12 +16,12 @@ Abaqus job files:
 * conc.f: user subroutine
 * conc.inc: user subroutine include file
 
-Hydra generated files:
+### Hydra generated files:
 
 * _coh-H.inp: include file with coehesive TSL law (generated)
 * H-3cohesive.map: solid to cohesive mapping file (generated)
 
-Run instructions.
+### Run instructions.
 
 1. Perform a preliminary static analysis to calculate the hydrostatic
    stress field.
@@ -52,4 +52,11 @@ Run instructions.
         $ abaqus python ../../abapython/saveh.py H-3cohesive
 
 Reference values for the expected results can be found in the `results`
-directory.
+directory. Initial normalized concentration (`NNC`) can be changed in the
+preamble of file `H-2massdiff.inp`, under the `*PARAMETER` card.
+
+Results for the following initial concentrations are reported:
+
+* `NNC=7.042` in `results/H-3cohesive_NNC=07.npz`
+* `NNC=14.084` in `results/H-3cohesive_NNC=14.npz`
+* `NNC=21.127` in `results/H-3cohesive_NNC=21.npz`

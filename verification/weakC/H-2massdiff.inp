@@ -3,6 +3,12 @@ Two-dimensional element
 SI Units
 X axis horizontal, Y axis vertical
 ** ----------------------------------------------------------------
+**
+** variable parameters
+**
+*PARAMETER
+nnc0 = 21.127
+** ----------------------------------------------------------------
 *INCLUDE, INPUT=_geometry.inp
 *INCLUDE, INPUT=_solid-2massdiff.inp
 ** 
@@ -22,7 +28,7 @@ X axis horizontal, Y axis vertical
 HYDRA, 296.15
 *INITIAL CONDITIONS, TYPE=PRESSURE STRESS, FILE=H-1static
 *INITIAL CONDITIONS, TYPE=CONCENTRATION
-HYDRA, 7.042
+HYDRA, <nnc0>
 **
 ** ----------------------------------------------------------------
 ** 
@@ -35,7 +41,7 @@ HYDRA, 7.042
 ** BOUNDARY CONDITIONS
 ** 
 *BOUNDARY
-CONC, 11, 11, 7.042
+CONC, 11, 11, <nnc0>
 **
 ** OUTPUT REQUESTS
 **

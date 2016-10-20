@@ -11,4 +11,7 @@
 *.023
 *.stt
 *.log
+*.par
+*.pes
+*.pmg
 abaqus.rpy*
