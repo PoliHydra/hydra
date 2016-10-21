@@ -22,9 +22,9 @@ TSL.
 
 ### Run instructions.
 
-1. Generate the `_coh.inp` material block using the `utils/gencoh.py` program
+1. Generate the `_coh.inp` material block using the `hydra-utils/gencoh.py` program
 
-        $ python ../../utils/gencoh.py 0.22e-3 9.7e-3 15e-3 1000 > _coh.inp
+        $ python ../../hydra-utils/gencoh.py 0.22e-3 9.7e-3 15e-3 1000 > _coh.inp
    
    The  generated file should be identical to `./results/_coh.inp`
 
@@ -66,9 +66,9 @@ TSL with true stress (Cauchy) correction.
 
 ### Run instructions.
 
-1. Generate the `_coh-ts.inp` material block using the `utils/gencoh.py` program
+1. Generate the `_coh-ts.inp` material block using the `hydra-utils/gencoh.py` program
 
-        $ python ../../utils/gencoh.py 0.22e-3 9.7e-3 15e-3 1000 --true-stress > _coh-ts.inp
+        $ python ../../hydra-utils/gencoh.py 0.22e-3 9.7e-3 15e-3 1000 --true-stress > _coh-ts.inp
 
    The  generated file should be identical to `./results/_coh.inp`
 

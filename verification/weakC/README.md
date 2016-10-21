@@ -36,7 +36,7 @@
 
 3. Generate cohesive element TSL
 
-        $ python ../../utils/gencoh.py 0.22e-3 9.7e-3 15.e-3 1000 --hydrogen > _coh-H.inp
+        $ python ../../hydra-utils/gencoh.py 0.22e-3 9.7e-3 15.e-3 1000 --hydrogen > _coh-H.inp
 
 4. Generate the solid-to-cohesive map file (`H-3cohesive.map`)
 
