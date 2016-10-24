@@ -101,9 +101,14 @@ def trapezoidal(d0, d1, df, n01=10, n1f=10):
     d01.sort()
     dam01.sort()
 
-    # there should be no duplicates
-    assert (d01[1:] != d01[:-1]).all()
-    assert (dam01[1:] != dam01[:-1]).all()
+    # there can be duplicates/close duplicates
+    dups = (np.isclose(d01[1:], d01[:-1]) | np.isclose(dam01[1:], dam01[:-1]))
+    if dups.any():
+        dupidx, = dups.nonzero()
+        d01 = np.delete(d01, dupidx)
+        dam01 = np.delete(dam01, dupidx)
+    assert not np.isclose(d01[1:], d01[:-1]).any()
+    assert not np.isclose(dam01[1:], dam01[:-1]).any()
     # sure to have done the math correctly?
     np.testing.assert_allclose(d01, d0 / (1 - dam01))
     np.testing.assert_allclose(dam01, 1 - d0/d01)
