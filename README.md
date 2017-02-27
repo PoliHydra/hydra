@@ -9,3 +9,4 @@ HYDRogen embrittlement in Abaqus FEA.
 * `abapython`: Abaqus python utilities
 * `hydra-utils`: pure python utilities
 * `verification`: verification examples
+* `examples`: example problems
