@@ -1,5 +1,6 @@
 import argparse
-import os.path
+import os
+import sys
 import numpy as np
 import scipy as sp
 import scipy.interpolate
@@ -39,6 +40,18 @@ def main():
             tdata = data['t']
             trefv = refv['t']
             t = np.union1d(tdata, trefv)
+            if not np.all(tdata[[0,-1]] == trefv[[0,-1]]):
+                # find intersection of time axes
+                ta = max(tdata[0], trefv[0])
+                tb = min(tdata[-1], trefv[-1])
+                t = t[np.logical_and(ta<=t, t<=tb)]
+                print('Different time axis: data {}'.format(tdata[[0,-1]]))
+                print('                     ref. {}'.format(trefv[[0,-1]]))
+                if len(t):
+                    print('Comparison on intersection {}'-format([ta, tb]))
+                else:
+                    print('Empty intersection')
+                    sys.exit(1)
             # compute error
             equalset = set()
             for key in sorted(refset & dataset):
@@ -51,17 +64,16 @@ def main():
                 err = norm(aintp-bintp, t)
                 nor = norm(bintp, t)
                 if err:
-                    print('{:15} {:<8.6f} {:.1e}'.format(
-                        key, err/nor, nor))
+                    print('{:15} {:<8.6f} {:.1e}'.format(key, err/nor, nor))
                 else:
-                    print('{:15} {:<8.0f} {:.1e}'.format(
-                        key, err, nor))
+                    # print('{:15} {:<8.0f} {:.1e}'.format(key, err, nor))
                     equalset.add(key)
             if equalset == dataset:
                 print("* files '{}' and '{}' are identical.".format(
                     args.data, refvpath))
     except IOError as exp:
         print(exp)
+
 
 if __name__ == '__main__':
     main()

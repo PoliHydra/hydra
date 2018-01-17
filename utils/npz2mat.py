@@ -23,5 +23,6 @@ def main():
         else:
             print('%s -> %s' % (npz, mat))
 
+
 if __name__ == '__main__':
     main()
