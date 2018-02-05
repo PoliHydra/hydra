@@ -23,7 +23,7 @@ setup(
 
     py_modules=['gencoh', ],
 
-    install_requires=['numpy', ],
+    install_requires=['numpy>=1.7', ],
 
     entry_points={
         'console_scripts': ['gencoh = gencoh:main', ],
