@@ -7,9 +7,9 @@ with a trapezoidal TSL.
 ## Installation and running
 
 The code requires Python 2.7 or Python 3 and
-[NumPy](http://www.numpy.org) 1.7 or newer.
+[NumPy](http://www.numpy.org) 1.10 or newer.
 
-        $ pip install --upgrade numpy
+        $ pip install --upgrade 'numpy>=1.10'
 
 The scripts can be run without the need for installation, e. g.:
 
