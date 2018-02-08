@@ -17,7 +17,7 @@
 1. Generate the `_coh.inp` material block using the `hydra-utils/gencoh.py` program
 
         $ python ../../hydra-utils/gencoh.py 0.00075 0.00975 0.0157 2600 > _coh.inp
-   
+
    The  generated file should be identical to `./results/_coh.inp`
 
 2. Run abaqus
@@ -41,7 +41,7 @@
 * `H-3cohesive.inp`: cohesive analysis job file
 * `_AISI.inp`: include file with AISI steel material block
 * `_mesh_sa.inp`: include file with mesh definition for static analysis
-* `_mesh_md.inp`: include file with mesh definition for mass diffusion 
+* `_mesh_md.inp`: include file with mesh definition for mass diffusion
   analysis
 * `_mesh.inp`: include file with mesh definition with cohesive elements
 * `conc.f`: user subroutine
@@ -62,6 +62,22 @@
 2. Mass diffusion analysis
 
         $ abaqus analysis job=H-2massdiff
+
+   Under some circumstances the Abaqus Analysis Input File Processor could
+   raise an error:
+
+        ***ERROR: MAXIMUM SIZE OF STATIC WORKSPACE HAS BEEN EXCEEDED.
+
+   In such cases it is possibile to increase the preprocessor memory by adding
+   a `memory="8 gb"` option to the Abaqus invocation. Some experimentation is
+   necessary to find the correct value.
+   Alternatively one could set the environment variable `ABA_SINT_CAP`
+
+        $ export ABA_SINT_CAP=1024
+        $ abaqus analysis job=H-2massdiff
+
+   Again the appropriate value should be determined by experimentation.
+
 
 3. Generate cohesive element TSL
 
