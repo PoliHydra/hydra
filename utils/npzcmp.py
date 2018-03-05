@@ -30,12 +30,18 @@ def main():
                 a = data[key]
                 b = ref[key]
                 if a.shape != b.shape:
-                    print('* {}: different shape.'.format(key))
+                    print('* {}: different shape {} {}.'.format(
+                        key, a.shape, b.shape))
                     continue
                 if np.all(a == b):
                     equalset.add(key)
                 else:
-                    print('* {}: |diff|_inf = {}'.format(key, norm(a-b)))
+                    try:
+                        err = norm(a-b)
+                    except TypeError:
+                        print('* {}: differ'.format(key))
+                    else:
+                        print('* {}: |diff|_inf = {}'.format(key, err))
             if refset - dataset:
                 print('* missing vars in {}:'.format(args.data))
                 for k in sorted(refset - dataset):
@@ -53,6 +59,7 @@ def main():
                 sys.exit(1)
     except IOError as exp:
         print(exp)
+
 
 if __name__ == '__main__':
     main()

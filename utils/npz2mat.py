@@ -1,4 +1,5 @@
-import os.path
+from __future__ import print_function
+import os
 import argparse
 from numpy import load
 from scipy.io import savemat
@@ -22,6 +23,7 @@ def main():
             print(exp)
         else:
             print('%s -> %s' % (npz, mat))
+
 
 if __name__ == '__main__':
     main()
