@@ -1,8 +1,9 @@
 # hydra-utils
 
 ## Contents
-`gencoh.py` is a python script for generating an Abaqus cohesive material definition
-with a trapezoidal TSL.
+
+`gencoh.py` is a python script for generating an Abaqus cohesive
+material definition with a trapezoidal TSL.
 
 ## Installation and running
 
