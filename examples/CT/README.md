@@ -10,7 +10,7 @@
 
 ### Hydra generated files:
 
-* `_coh.inp`: include file with coehesive TSL law (generated)
+* `_coh.inp`: include file with cohesive TSL law (generated)
 
 ### Run instructions.
 
@@ -49,7 +49,7 @@
 
 ### Hydra generated files:
 
-* _coh-H.inp: include file with coehesive TSL law (generated)
+* _coh-H.inp: include file with cohesive TSL law (generated)
 * H-3cohesive.map: solid to cohesive mapping file (generated)
 
 ### Run instructions.
@@ -68,7 +68,7 @@
 
         ***ERROR: MAXIMUM SIZE OF STATIC WORKSPACE HAS BEEN EXCEEDED.
 
-   In such cases it is possibile to increase the preprocessor memory by adding
+   In such cases it is possible to increase the preprocessor memory by adding
    a `memory="8 gb"` option to the Abaqus invocation. Some experimentation is
    necessary to find the correct value.
    Alternatively one could set the environment variable `ABA_SINT_CAP`

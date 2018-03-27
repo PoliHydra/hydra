@@ -18,7 +18,7 @@
 
 ### Hydra generated files:
 
-* _coh-H.inp: include file with coehesive TSL law (generated)
+* _coh-H.inp: include file with cohesive TSL law (generated)
 * H-3cohesive.map: solid to cohesive mapping file (generated)
 
 ### Run instructions.
@@ -43,7 +43,7 @@
         $ abaqus datacheck job=H-3cohesive
         $ abaqus python ../../abapython/mkmap.py H-3cohesive
 
-5. Peform the cohesive analysis
+5. Perform the cohesive analysis
 
         $ abaqus continue job=H-3cohesive user=conc.f
 

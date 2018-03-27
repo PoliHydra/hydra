@@ -2,7 +2,7 @@
 
 ## noH
 
-Single element test for verifiying the correct implemetation of a trapezoidal
+Single element test for verifying the correct implementation of a trapezoidal
 TSL.
 
 ### Abaqus job files:
@@ -13,7 +13,7 @@ TSL.
 
 ### Hydra generated files:
 
-* `_coh.inp`: include file with coehesive TSL law (generated)
+* `_coh.inp`: include file with cohesive TSL law (generated)
 
 ### Analysis result files:
 
@@ -43,7 +43,7 @@ TSL.
 
 ## noH-ts
 
-Single element test for verifiying the correct implemetation of a trapezoidal
+Single element test for verifying the correct implementation of a trapezoidal
 TSL with true stress (Cauchy) correction.
 
 ### Abaqus job files:
@@ -56,7 +56,7 @@ TSL with true stress (Cauchy) correction.
 
 ### Hydra generated files:
 
-* `_coh-ts.inp`: include file with coehesive TSL law (generated)
+* `_coh-ts.inp`: include file with cohesive TSL law (generated)
 * `noH-ts.map`: solid to cohesive mapping file (generated)
 
 ### Analysis result files:
