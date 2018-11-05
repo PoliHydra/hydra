@@ -5,3 +5,5 @@
   cohesive elements, with and without true stress correction.
 - [weakC](weakC): tests for the verification of the weakly coupled solution
   procedure.
+- [gradient](gradient): tests for validating the hydrostatic stress gradient
+  estimate.

@@ -6,5 +6,6 @@ scripts.
 
 Contents:
 
+- computation of inverse Jacobian: `mkjac.py`
 - generation of mapping files: `mkmap.py`
 - output of numpy `.npz` files from Abaqus history data: `saveh.py`
