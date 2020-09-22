@@ -40,15 +40,15 @@ These steps are common for both trap sites laws.
 
 1. Generate the TSL law for a coupled analysis:
 
-        $ python ../../hydra-utils/gencoh.py 0.00075 0.00975 0.0157 2600 --hydrogen _coh.inp
+        $ python ../../hydra-utils/gencoh.py 0.00075 0.00975 0.0157 2600 --hydrogen > _coh.inp
 
    This command will generate `_coh.inp`
 
 1. Generate the inverse Jacobian matrix and continuum to cohesive mapping
 
         $ abaqus j=H datacheck
-		$ abaqus python ../../abapython/mkmap.py H
-		$ abaqus python ../../abapython/mkjac.py H
+        $ abaqus python ../../abapython/mkmap.py H
+        $ abaqus python ../../abapython/mkjac.py H
 
    These commands will generate `H.jac` and `H.map`.
 
@@ -60,14 +60,14 @@ For reference the generated files are included in the
 1. Run the coupled analysis with Kumnick law:
 
         $ ln H.jac H_k.jac
-		$ ln H.map H_k.map
-		$ abaqus j=H_k input=H user=hydra_k.f
+        $ ln H.map H_k.map
+        $ abaqus j=H_k input=H user=hydra_k.f
 
 1. same with Sofronis law:
 
-		$ ln H.jac H_s.jac
-		$ ln H.map H_s.map
-		$ abaqus j=H_s input=H user=hydra_s.f
+        $ ln H.jac H_s.jac
+        $ ln H.map H_s.map
+        $ abaqus j=H_s input=H user=hydra_s.f
 
 
 
