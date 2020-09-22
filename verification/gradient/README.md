@@ -4,9 +4,10 @@ The pourpose of these tests is to verify the accuracy of the stress
 gradient estimation in presence of a non uniform mesh. These examples are
 discussed in
 
-> **G. Gobbi, C. Colombo, S. Miccoli, L. Vergani (2018)**. A
+> **G. Gobbi, C. Colombo, S. Miccoli, L. Vergani (2019)**. A
 > fully coupled implementation of hydrogen embrittlement in FE
-> analysis. To be submitted.
+> analysis. Advances in Engineering Software, 135.
+> [doi:10.1016/j.advengsoft.2019.04.004](https://doi.org/10.1016/j.advengsoft.2019.04.004)
 
 ## Files
 
